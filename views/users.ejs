@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <% for(var i=0; i < data.length; i++) { %>
+        <div>
+            <p> <b>Username:</b> <%=data[i].username%> <b>Password:</b>  <%=data[i].password%></p> <input id= <%= data[i]._id %> type="button" class='edit' value="Edit"> <input id=<%=data[i]._id %> class='delete' type="button" value="Delete">
+        </div>
+        <br>
+    <% } %>
+    <script>
+        $(document).ready(function () {
+            $(".delete").click(function () {
+                location.href='/delete/'+this.id
+            });
+            $(".edit").click(function () {
+                location.href='/users/'+this.id
+            });
+        });
+    </script>
+</body>
+</html>

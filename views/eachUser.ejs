@@ -8,9 +8,11 @@
 </head>
 <body>
     <form action="/edit" method="post">
-        Username: <input type="text"  name='username'value=<%= data[0].username %>>
-        Password: <input type="text" name='password'value=<%= data[0].password %>>
+        <input type="text" name='id' value= <%= data[0]._id %> style="display: none;" >
+        Username: <input type="text" name='username' value= <%= data[0].username %> ><br>
+        Password: <input type="text" name='password' value= <%= data[0].password %> ><br>
         <input type="submit" value="Edit">
     </form>
+
 </body>
 </html>
